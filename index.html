@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hotel</title>
+  <title>Errum Hotel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #1e2a38;
+      background-color: whitesmoke;
+      color: darkslategray;
     }
 
+    /* HEADER */
     header {
-      background: #1e2a38;
+      background: midnightblue;
       color: white;
       padding: 15px 30px;
       display: flex;
@@ -23,21 +24,36 @@
     }
 
     nav a {
-      color: #a9cce3;
+      color: lightsteelblue;
       margin: 0 10px;
       text-decoration: none;
     }
 
+    nav a:hover {
+      color: white;
+    }
+
+    /* HERO */
     .hero {
       background: url('https://images.unsplash.com/photo-1601758003122-58d7e1f1c74b') no-repeat center/cover;
       height: 85vh;
     }
 
+    /* SECTIONS */
     .section {
       padding: 50px 20px;
       text-align: center;
     }
 
+    .section h2 {
+      color: darkslateblue;
+    }
+
+    .section p {
+      color: darkslategray;
+    }
+
+    /* ROOMS */
     .rooms {
       display: flex;
       flex-wrap: wrap;
@@ -50,6 +66,7 @@
       width: 250px;
       border-radius: 8px;
       overflow: hidden;
+      box-shadow: 0 0 10px lightgray;
     }
 
     .room img {
@@ -58,9 +75,33 @@
       object-fit: cover;
     }
 
+    .room h3 {
+      margin: 10px 0;
+      color: darkslategray;
+    }
+
+    .room p {
+      color: gray;
+    }
+
+    /* BUTTON */
+    button {
+      background: darkslateblue;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: midnightblue;
+    }
+
+    /* FOOTER */
     footer {
-      background: #1e2a38;
-      color: #a9cce3;
+      background: midnightblue;
+      color: lightsteelblue;
       text-align: center;
       padding: 20px;
     }
@@ -69,7 +110,7 @@
 
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header>
     <h2>Hotel Name</h2>
     <nav>
@@ -80,43 +121,54 @@
     </nav>
   </header>
 
-  <!-- Hero Image -->
+  <!-- HERO -->
   <div class="hero"></div>
 
-  <!-- Section -->
+  <!-- ABOUT -->
   <div class="section">
     <h2>Title</h2>
-    <p>Text goes here</p>
+    <p>Write your hotel description here.</p>
   </div>
 
-  <!-- Rooms -->
+  <!-- ROOMS -->
   <div class="section">
+    <h2>Rooms</h2>
+
     <div class="rooms">
 
       <div class="room">
         <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-        <h3>Room</h3>
-        <p>Text</p>
+        <h3>Room Name</h3>
+        <p>Details here</p>
+        <button>Button</button>
       </div>
 
       <div class="room">
         <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
-        <h3>Room</h3>
-        <p>Text</p>
+        <h3>Room Name</h3>
+        <p>Details here</p>
+        <button>Button</button>
+      </div>
+
+      <div class="room">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+        <h3>Room Name</h3>
+        <p>Details here</p>
+        <button>Button</button>
       </div>
 
     </div>
   </div>
 
-  <!-- Contact -->
+  <!-- CONTACT -->
   <div class="section">
     <h2>Contact</h2>
-    <p>Text</p>
+    <p>Write contact info here</p>
   </div>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
-    <p>Footer text</p>
+    <p>Footer text here</p>
   </footer>
 
 </body>
