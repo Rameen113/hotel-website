@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #1e2a38;
+    }
+
+    header {
+      background: #1e2a38;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #a9cce3;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1601758003122-58d7e1f1c74b') no-repeat center/cover;
+      height: 85vh;
+    }
+
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .rooms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .room {
+      background: white;
+      width: 250px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .room img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    footer {
+      background: #1e2a38;
+      color: #a9cce3;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h2>Hotel Name</h2>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Rooms</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Image -->
+  <div class="hero"></div>
+
+  <!-- Section -->
+  <div class="section">
+    <h2>Title</h2>
+    <p>Text goes here</p>
+  </div>
+
+  <!-- Rooms -->
+  <div class="section">
+    <div class="rooms">
+
+      <div class="room">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+        <h3>Room</h3>
+        <p>Text</p>
+      </div>
+
+      <div class="room">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+        <h3>Room</h3>
+        <p>Text</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="section">
+    <h2>Contact</h2>
+    <p>Text</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Footer text</p>
+  </footer>
+
+</body>
+</html>
