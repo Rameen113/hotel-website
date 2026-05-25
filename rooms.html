@@ -31,25 +31,31 @@
       color: white;
     }
 
-    /* GALLERY GRID */
+    h1 {
+      text-align: center;
+      margin: 25px 0;
+      color: darkslategray;
+    }
+
+    /* ROOM GRID (BIGGER) */
     .rooms {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 30px;
     }
 
     .room img {
       width: 100%;
-      height: 200px;
+      height: 300px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
       transition: transform 0.3s ease;
     }
 
     .room img:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     /* LIGHTBOX */
@@ -73,10 +79,9 @@
       border-radius: 10px;
     }
 
-    /* NAV BUTTONS */
     .nav-btn {
       color: white;
-      font-size: 30px;
+      font-size: 35px;
       cursor: pointer;
       margin: 20px;
       user-select: none;
@@ -92,84 +97,73 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h2>Errum Hotel</h2>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="rooms.html">Rooms</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h2>Errum Hotel</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="attractions.html">Things To Do</a>
+  </nav>
+</header>
 
-  <!-- GALLERY -->
-  <div class="rooms">
+<h1>Our Rooms</h1>
 
-    <div class="room"><img src="room1.jpg" onclick="openImg(0)"></div>
-    <div class="room"><img src="room2.jpg" onclick="openImg(1)"></div>
-    <div class="room"><img src="room3.jpg" onclick="openImg(2)"></div>
-    <div class="room"><img src="room4.jpg" onclick="openImg(3)"></div>
-    <div class="room"><img src="room5.jpg" onclick="openImg(4)"></div>
-    <div class="room"><img src="room6.jpg" onclick="openImg(5)"></div>
-    <div class="room"><img src="room7.jpg" onclick="openImg(6)"></div>
-    <div class="room"><img src="room8.jpg" onclick="openImg(7)"></div>
-    <div class="room"><img src="room9.jpg" onclick="openImg(8)"></div>
+<div class="rooms">
 
+  <div class="room"><img src="room1.jpg" onclick="openImg(0)"></div>
+  <div class="room"><img src="room2.jpg" onclick="openImg(1)"></div>
+  <div class="room"><img src="room3.jpg" onclick="openImg(2)"></div>
+  <div class="room"><img src="room4.jpg" onclick="openImg(3)"></div>
+  <div class="room"><img src="room5.jpg" onclick="openImg(4)"></div>
+  <div class="room"><img src="room6.jpg" onclick="openImg(5)"></div>
+  <div class="room"><img src="room7.jpg" onclick="openImg(6)"></div>
+  <div class="room"><img src="room8.jpg" onclick="openImg(7)"></div>
+  <div class="room"><img src="room9.jpg" onclick="openImg(8)"></div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeImg(event)">
+  <div class="controls">
+    <span class="nav-btn" onclick="prevImg(event)">&#10094;</span>
+    <img id="lightboxImg">
+    <span class="nav-btn" onclick="nextImg(event)">&#10095;</span>
   </div>
+</div>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" onclick="closeImg(event)">
-    
-    <div class="controls">
-      <span class="nav-btn" onclick="prevImg(event)">&#10094;</span>
+<script>
+  const images = [
+    "room1.jpg","room2.jpg","room3.jpg",
+    "room4.jpg","room5.jpg","room6.jpg",
+    "room7.jpg","room8.jpg","room9.jpg"
+  ];
 
-      <img id="lightboxImg">
+  let currentIndex = 0;
 
-      <span class="nav-btn" onclick="nextImg(event)">&#10095;</span>
-    </div>
+  function openImg(index) {
+    currentIndex = index;
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightboxImg").src = images[currentIndex];
+  }
 
-  </div>
-
-  <script>
-    const images = [
-      "room1.jpg",
-      "room2.jpg",
-      "room3.jpg",
-      "room4.jpg",
-      "room5.jpg",
-      "room6.jpg",
-      "room7.jpg",
-      "room8.jpg",
-      "room9.jpg"
-    ];
-
-    let currentIndex = 0;
-
-    function openImg(index) {
-      currentIndex = index;
-      document.getElementById("lightbox").style.display = "flex";
-      document.getElementById("lightboxImg").src = images[currentIndex];
+  function closeImg(event) {
+    if (event.target.id === "lightbox") {
+      document.getElementById("lightbox").style.display = "none";
     }
+  }
 
-    function closeImg(event) {
-      if (event.target.id === "lightbox") {
-        document.getElementById("lightbox").style.display = "none";
-      }
-    }
+  function nextImg(event) {
+    event.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById("lightboxImg").src = images[currentIndex];
+  }
 
-    function nextImg(event) {
-      event.stopPropagation();
-      currentIndex = (currentIndex + 1) % images.length;
-      document.getElementById("lightboxImg").src = images[currentIndex];
-    }
-
-    function prevImg(event) {
-      event.stopPropagation();
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      document.getElementById("lightboxImg").src = images[currentIndex];
-    }
-  </script>
+  function prevImg(event) {
+    event.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById("lightboxImg").src = images[currentIndex];
+  }
+</script>
 
 </body>
 </html>
