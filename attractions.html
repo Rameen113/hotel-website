@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Things To Do - Errum Hotel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: whitesmoke;
+    }
+
+    header {
+      background: midnightblue;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: lightsteelblue;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+      color: darkslategray;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px lightgray;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .card p {
+      padding: 0 10px 15px;
+      color: darkslategray;
+      line-height: 1.4em;
+    }
+
+    .distance {
+      font-weight: bold;
+      color: midnightblue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>Errum Hotel</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="rooms.html">Rooms</a>
+      <a href="attractions.html">Things To Do</a>
+    </nav>
+  </header>
+
+  <h1>Things To Do Near Errum Hotel</h1>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="naran-bazaar.jpg">
+      <h3>Naran Bazaar</h3>
+      <p><span class="distance">0 km (walking distance)</span><br>
+      Vibrant local market with handicrafts, food, souvenirs, and street culture.</p>
+    </div>
+
+    <div class="card">
+      <img src="kunhar-river.jpg">
+      <h3>Kunhar River</h3>
+      <p><span class="distance">0 km (runs through Naran)</span><br>
+      Crystal-clear river perfect for walks, photography, and trout fishing.</p>
+    </div>
+
+    <div class="card">
+      <img src="sohni-waterfall.jpg">
+      <h3>Sohni Waterfall</h3>
+      <p><span class="distance">8 km (15–20 min drive)</span><br>
+      A scenic waterfall surrounded by lush greenery and rocky terrain.</p>
+    </div>
+
+    <div class="card">
+      <img src="saif-ul-malook.jpg">
+      <h3>Lake Saif-ul-Malook</h3>
+      <p><span class="distance">9 km (20–30 min jeep ride)</span><br>
+      Famous turquoise lake with boating and breathtaking mountain views.</p>
+    </div>
+
+    <div class="card">
+      <img src="anso-lake.jpg">
+      <h3>Ansoo Lake</h3>
+      <p><span class="distance">16 km (plus trekking route)</span><br>
+      A unique tear-shaped alpine lake for adventure hikers.</p>
+    </div>
+
+    <div class="card">
+      <img src="lalazar.jpg">
+      <h3>Lalazar</h3>
+      <p><span class="distance">21 km (45–60 min jeep ride)</span><br>
+      High-altitude meadow with wildflowers and mountain views.</p>
+    </div>
+
+    <div class="card">
+      <img src="lulusar-lake.jpg">
+      <h3>Lulusar Lake</h3>
+      <p><span class="distance">48 km (1–1.5 hours drive)</span><br>
+      Stunning blue lake surrounded by dramatic peaks.</p>
+    </div>
+
+    <div class="card">
+      <img src="babusar-top.jpg">
+      <h3>Babusar Top</h3>
+      <p><span class="distance">65 km (2–2.5 hours drive)</span><br>
+      High mountain pass with panoramic views of Gilgit-Baltistan route.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
