@@ -12,6 +12,7 @@
       background-color: whitesmoke;
     }
 
+    /* HEADER */
     header {
       background: midnightblue;
       color: white;
@@ -31,11 +32,19 @@
       color: white;
     }
 
+    /* TITLE */
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+      color: darkslategray;
+    }
+
+    /* GRID */
     .rooms {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
+      gap: 15px;
+      padding: 20px;
     }
 
     .room img {
@@ -43,6 +52,11 @@
       height: 200px;
       object-fit: cover;
       border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .room img:hover {
+      transform: scale(1.05);
     }
 
   </style>
@@ -50,15 +64,20 @@
 
 <body>
 
+  <!-- HEADER -->
   <header>
     <h2>Errum Hotel</h2>
     <nav>
       <a href="index.html">Home</a>
       <a href="rooms.html">Rooms</a>
+      <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
+  <h1>Our Rooms</h1>
+
+  <!-- GALLERY -->
   <div class="rooms">
 
     <div class="room"><img src="room1.jpg"></div>
@@ -69,7 +88,8 @@
     <div class="room"><img src="room6.jpg"></div>
     <div class="room"><img src="room7.jpg"></div>
     <div class="room"><img src="room8.jpg"></div>
-    <div class="room"><img src="room9.jpg"></div> 
+    <div class="room"><img src="room9.jpg"></div>
+
   </div>
 
 </body>
