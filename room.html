@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rooms - Errum Hotel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: whitesmoke;
+    }
+
+    header {
+      background: midnightblue;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: lightsteelblue;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .rooms {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .room img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>Errum Hotel</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="rooms.html">Rooms</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="rooms">
+
+    <div class="room"><img src="room1.jpg"></div>
+    <div class="room"><img src="room2.jpg"></div>
+    <div class="room"><img src="room3.jpg"></div>
+    <div class="room"><img src="room4.jpg"></div>
+    <div class="room"><img src="room5.jpg"></div>
+    <div class="room"><img src="room6.jpg"></div>
+    <div class="room"><img src="room7.jpg"></div>
+
+  </div>
+
+</body>
+</html>
