@@ -12,7 +12,6 @@
       background-color: whitesmoke;
     }
 
-    /* HEADER */
     header {
       background: midnightblue;
       color: white;
@@ -32,14 +31,7 @@
       color: white;
     }
 
-    /* TITLE */
-    h1 {
-      text-align: center;
-      margin: 30px 0;
-      color: darkslategray;
-    }
-
-    /* GRID */
+    /* GALLERY GRID */
     .rooms {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -52,11 +44,47 @@
       height: 200px;
       object-fit: cover;
       border-radius: 10px;
+      cursor: pointer;
       transition: transform 0.3s ease;
     }
 
     .room img:hover {
       transform: scale(1.05);
+    }
+
+    /* LIGHTBOX */
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      flex-direction: column;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    /* NAV BUTTONS */
+    .nav-btn {
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      margin: 20px;
+      user-select: none;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
     }
 
   </style>
@@ -75,22 +103,73 @@
     </nav>
   </header>
 
-  <h1>Our Rooms</h1>
-
   <!-- GALLERY -->
   <div class="rooms">
 
-    <div class="room"><img src="room1.jpg"></div>
-    <div class="room"><img src="room2.jpg"></div>
-    <div class="room"><img src="room3.jpg"></div>
-    <div class="room"><img src="room4.jpg"></div>
-    <div class="room"><img src="room5.jpg"></div>
-    <div class="room"><img src="room6.jpg"></div>
-    <div class="room"><img src="room7.jpg"></div>
-    <div class="room"><img src="room8.jpg"></div>
-    <div class="room"><img src="room9.jpg"></div>
+    <div class="room"><img src="room1.jpg" onclick="openImg(0)"></div>
+    <div class="room"><img src="room2.jpg" onclick="openImg(1)"></div>
+    <div class="room"><img src="room3.jpg" onclick="openImg(2)"></div>
+    <div class="room"><img src="room4.jpg" onclick="openImg(3)"></div>
+    <div class="room"><img src="room5.jpg" onclick="openImg(4)"></div>
+    <div class="room"><img src="room6.jpg" onclick="openImg(5)"></div>
+    <div class="room"><img src="room7.jpg" onclick="openImg(6)"></div>
+    <div class="room"><img src="room8.jpg" onclick="openImg(7)"></div>
+    <div class="room"><img src="room9.jpg" onclick="openImg(8)"></div>
 
   </div>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" onclick="closeImg(event)">
+    
+    <div class="controls">
+      <span class="nav-btn" onclick="prevImg(event)">&#10094;</span>
+
+      <img id="lightboxImg">
+
+      <span class="nav-btn" onclick="nextImg(event)">&#10095;</span>
+    </div>
+
+  </div>
+
+  <script>
+    const images = [
+      "room1.jpg",
+      "room2.jpg",
+      "room3.jpg",
+      "room4.jpg",
+      "room5.jpg",
+      "room6.jpg",
+      "room7.jpg",
+      "room8.jpg",
+      "room9.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    function openImg(index) {
+      currentIndex = index;
+      document.getElementById("lightbox").style.display = "flex";
+      document.getElementById("lightboxImg").src = images[currentIndex];
+    }
+
+    function closeImg(event) {
+      if (event.target.id === "lightbox") {
+        document.getElementById("lightbox").style.display = "none";
+      }
+    }
+
+    function nextImg(event) {
+      event.stopPropagation();
+      currentIndex = (currentIndex + 1) % images.length;
+      document.getElementById("lightboxImg").src = images[currentIndex];
+    }
+
+    function prevImg(event) {
+      event.stopPropagation();
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      document.getElementById("lightboxImg").src = images[currentIndex];
+    }
+  </script>
 
 </body>
 </html>
